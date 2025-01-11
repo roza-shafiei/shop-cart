@@ -1,0 +1,8 @@
+- add axios package to handle api calls
+- use dummyJson website for apis
+- set 2 pages at least for this project ( home, cart, about)
+- need help in header => contact page and login form
+- no need to icon package, export its icon
+
+// use vuetify sass variables
+- packages: sass vite-plugin-vuetify (sass-loader not needed in vite, its for webpack)
