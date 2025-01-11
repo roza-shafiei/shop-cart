@@ -1,5 +1,5 @@
 <script setup></script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <h1 class="t-text-3xl t-bg-red-600">Hello world!</h1>
 </template>
