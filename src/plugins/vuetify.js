@@ -5,7 +5,11 @@ import * as directives from 'vuetify/directives'
 export default createVuetify({
   components,
   directives,
-  theme: {
-    // Your theme configuration
+  defaults: {
+    global: {
+      ripple: false,
+    },
+    VBtn: { variant: 'flat' },
   },
+  theme: {},
 })

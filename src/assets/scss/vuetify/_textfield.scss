@@ -1,0 +1,99 @@
+.v-application {
+  .v-text-field {
+    .v-input__control {
+      .v-field {
+        border-radius: 0.5rem;
+
+        &.v-field--disabled {
+          opacity: 1;
+          outline: none;
+          background: transparent !important;
+          box-shadow: unset !important;
+
+          .v-field__overlay {
+            background-color: transparent !important;
+          }
+        }
+
+        .v-field__field {
+          .v-field__input {
+            font-stretch: normal;
+            font-style: normal;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .v-input__details {
+      min-height: fit-content;
+      padding-top: 8px;
+
+      .v-messages {
+        min-height: fit-content;
+      }
+    }
+  }
+}
+
+.v-theme--light {
+
+  .v-text-field {
+    .v-field {
+      border: solid 1px $color-light-white-300;
+
+      &.v-field--focused {
+        border: solid 1px $color-light-black-100;
+
+      }
+
+      &.v-field--disabled {
+        border: solid 1px $color-light-white-500;
+
+        ::placeholder {
+          color: $color-light-white-500;
+        }
+      }
+
+      ::placeholder {
+        color: $color-light-white-600;
+        opacity: 0.8;
+      }
+
+      .v-field__outline {
+        display: none;
+      }
+
+    }
+  }
+}
+
+.v-theme--dark {
+  .v-text-field {
+    .v-input__control {
+      .v-field {
+        box-shadow: inset 3px 3px 2px 0 rgba(0, 0, 0, .3), inset -3px -3px 2px 0 hsla(0, 0%, 100%, .1) !important;
+
+        .v-field__field {
+          .v-field__input {
+            color: $color-dark-white-300;
+          }
+        }
+
+        &.v-field--focused {
+          border: solid 1px $color-light-black-100;
+        }
+
+        &.v-field--disabled {
+          border: solid 1px $color-light-black-400;
+
+          ::placeholder {
+            color: $color-light-black-400;
+
+          }
+        }
+      }
+    }
+  }
+}
+

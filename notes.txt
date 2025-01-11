@@ -6,3 +6,5 @@
 
 // use vuetify sass variables
 - packages: sass vite-plugin-vuetify (sass-loader not needed in vite, its for webpack)
+
+

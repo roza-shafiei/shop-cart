@@ -1,0 +1,8 @@
+@use 'vuetify/settings' with (
+  $button-height: 52px,
+  $button-border-radius: 0.5rem,
+  $button-font-size: 1rem,
+  $button-font-weight: 600,
+  $button-banner-actions-padding: 1.5rem,
+  $text-field-border-radius:0.5rem
+ );

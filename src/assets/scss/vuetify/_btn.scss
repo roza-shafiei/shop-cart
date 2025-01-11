@@ -1,0 +1,49 @@
+.v-application {
+  .v-btn__overlay {
+    display: none;
+  }
+
+  .v-theme--light {
+    &.v-btn {
+      background-color: $color-light-primary;
+      color: $color-light-white-100;
+
+      &.primary {
+        background-color: $color-light-white-100;
+        color: $color-light-secondary;
+        border: 1px solid $color-light-white-200;
+      }
+
+      &.v-btn--disabled {
+        background-color: $color-light-white-500 !important;
+        color: $color-light-white-100 !important;
+      }
+
+      &:hover {
+        opacity: 80%;
+      }
+    }
+  }
+
+  .v-theme--dark {
+    &.v-btn {
+      background-color: $color-dark-primary;
+      color: $color-dark-white-100;
+
+      &.primary {
+        background-color: $color-light-white-100;
+        color: $color-light-secondary;
+        border: 1px solid $color-light-white-200;
+      }
+
+      &.v-btn--disabled {
+        background-color: $color-dark-black-100 !important;
+        color: $color-dark-black-900 !important;
+      }
+    }
+
+    &:hover {
+      opacity: 80%;
+    }
+  }
+}
