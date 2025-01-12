@@ -7,6 +7,7 @@ export default {
         light: {
           primary: '#029FAE',
           secondary: '#272343',
+          content: '#F0F2F3',
           'white-700': '#999999',
           'white-600': '#AAAAAA',
           'white-500': '#BBBBBB',
@@ -27,6 +28,7 @@ export default {
         dark: {
           primary: '#029FAE',
           secondary: '#272343',
+          content: '#F0F2F3',
           'white-700': '#999999',
           'white-600': '#AAAAAA',
           'white-500': '#BBBBBB',

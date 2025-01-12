@@ -1,5 +1,13 @@
-<script setup></script>
+<script>
+import TheHeader from '@/components/layouts/TheHeader.vue'
+
+export default {
+  components: { TheHeader },
+}
+</script>
 
 <template>
-  <h1 class="t-text-3xl t-bg-red-600">Hello world!</h1>
+  <div class="home">
+    <TheHeader />
+  </div>
 </template>
