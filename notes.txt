@@ -8,3 +8,10 @@
 - packages: sass vite-plugin-vuetify (sass-loader not needed in vite, its for webpack)
 
 
+
+-axios config file
+-vuetify config file and define scss file in vite config
+-darkmode tailwind
+-egg shape for discount (border-radius)
+
+
