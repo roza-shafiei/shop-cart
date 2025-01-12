@@ -13,7 +13,6 @@ export default {
 <template>
   <v-carousel
     class="carousel bg-light-white-200 dark:bg-dark-white-200"
-    cycle
     hide-delimiter-background
     show-arrows
   >
@@ -32,16 +31,20 @@ export default {
 
     <!-- Carousel Items -->
     <v-carousel-item v-for="(slide, i) in slides" :key="i">
-      <div class="carousel-wrapper flex items-center justify-start h-full max-w-[75%] mx-auto">
+      <div
+        class="carousel-wrapper relative flex items-center justify-start h-full max-w-[80%] mx-auto"
+      >
         <!-- Content Section -->
-        <div class="content-section flex flex-col basis-1/2 items-start text-light-secondary">
+        <div
+          class="content-section hidden md:flex flex-col md:w-1/3 lg:w-1/2 items-start text-light-secondary"
+        >
           <p class="text-sm uppercase">Welcome to Comforty</p>
-          <h2 class="font-bold text-6xl">{{ slide.title }}</h2>
+          <h2 class="font-bold text-[26px] lg:text-5xl xl:text-6xl">{{ slide.title }}</h2>
           <v-btn class="mt-4">Shop Now</v-btn>
         </div>
 
         <!-- Image Section -->
-        <div class="image-section relative basis-1/2 h-full">
+        <div class="image-section relative w-full md:w-2/3 lg:w-1/2 h-full">
           <v-img :alt="slide.title" :src="slide.images[0]" class="product-image">
             <template v-slot:placeholder>
               <div class="flex items-center justify-center h-full">
@@ -55,17 +58,17 @@ export default {
             <span class="font-bold text-2xl text-red-500">
               {{ Math.ceil(slide.discountPercentage) }}%
             </span>
-            <span class="text-xs">Discount</span>
+            <span class="hidden sm:block text-xs">Discount</span>
           </div>
         </div>
-      </div>
 
-      <!-- Background Circle -->
-      <div class="background-circle"></div>
+        <!-- Background Circle -->
+        <div class="background-circle"></div>
+      </div>
     </v-carousel-item>
   </v-carousel>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 .discount-badge {
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
@@ -80,14 +83,46 @@ export default {
 }
 
 .background-circle {
-  @apply w-[38rem] h-[38rem] right-[7.25rem] top-[-50%] z-[0]
-  absolute rounded-full bg-light-white-300;
+  @screen sm {
+    width: min(90vw, 37rem);
+    height: min(90vw, 37rem);
+  }
+  @screen md {
+    width: min(44vw, 37rem);
+    height: min(44vw, 37rem);
+    right: 0;
+    left: unset;
+    transform: unset;
+  }
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(-20vw);
+  z-index: 0;
+  position: absolute;
+  border-radius: 100%;
+  background: $color-light-white-300;
 }
 
 .discount-badge {
-  @apply flex flex-col gap-2 items-center justify-center absolute
-  top-[20%] right-[20%] z-[12] h-[100px] w-[100px]
-  bg-light-white-100;
+  height: 4rem;
+  width: 4rem;
+  @screen sm {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+  @screen lg {
+    height: 7rem;
+    width: 7rem;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  z-index: 12;
+  background: $color-light-white-100;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
 
@@ -104,15 +139,20 @@ export default {
 .v-window__controls {
   z-index: 11 !important;
 }
-
-.v-carousel__controls {
-  height: 30px;
-}
 </style>
 <style lang="scss">
-.v-btn--icon {
-  height: 1rem !important;
-  width: 1rem !important;
+.v-carousel__controls {
+  margin-bottom: 1rem !important;
+  height: 30px;
+}
+
+.v-carousel__controls {
+  .v-btn--icon {
+    height: 0.5rem !important;
+    width: 0.5rem !important;
+    margin-right: 0.5rem;
+    margin-left: 0;
+  }
 }
 
 .v-btn.v-carousel__controls__item:not(.v-btn--active) {
