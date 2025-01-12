@@ -13,6 +13,7 @@ export default {
 <template>
   <v-carousel
     class="carousel bg-light-white-200 dark:bg-dark-white-200"
+    cycle
     hide-delimiter-background
     show-arrows
   >
