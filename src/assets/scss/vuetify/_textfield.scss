@@ -37,27 +37,25 @@
 }
 
 .v-theme--light {
-
   .v-text-field {
+    border: solid 1px $color-light-white-300;
+    background-color: $color-light-white-100 !important;
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+
+    .v-field__input {
+      border-radius: 0;
+      padding: 0;
+    }
+
+
     .v-field {
-      border: solid 1px $color-light-white-300;
-
-      &.v-field--focused {
-        border: solid 1px $color-light-black-100;
-
-      }
-
       &.v-field--disabled {
         border: solid 1px $color-light-white-500;
 
         ::placeholder {
           color: $color-light-white-500;
         }
-      }
-
-      ::placeholder {
-        color: $color-light-white-600;
-        opacity: 0.8;
       }
 
       .v-field__outline {
@@ -80,17 +78,8 @@
           }
         }
 
-        &.v-field--focused {
-          border: solid 1px $color-light-black-100;
-        }
-
         &.v-field--disabled {
           border: solid 1px $color-light-black-400;
-
-          ::placeholder {
-            color: $color-light-black-400;
-
-          }
         }
       }
     }
