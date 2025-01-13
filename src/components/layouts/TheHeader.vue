@@ -59,7 +59,7 @@ export default {
             aria-labelledby="cart"
             class="p-2 relative flex items-center gap-1 rounded-lg cursor-pointer bg-light-white-100 dark:bg-dark-white-100"
           >
-            <img alt="Shopping cart icon" src="/images/icons/Buy.png" />
+            <img alt="Shopping cart icon" src="/images/icons/buy.png" />
             <p id="cart" class="text-xs">Cart</p>
             <span
               class="px-1 text-[10px] absolute top-0 right-0 rounded-full text-light-white-100 bg-light-primary dark:bg-dark-primary"

@@ -32,19 +32,14 @@ export default {
 .v-slide-group {
   .v-slide-group__container {
     .v-slide-group__content {
-      gap: 1rem;
+      gap: 12px;
     }
   }
 }
 
 .slider-group {
   .nav-button {
-    @apply cursor-pointer bg-light-white-100 dark:bg-light-white-100 p-4 rounded-full;
-    transition: transform 0.2s ease;
-
-    &:hover {
-      transform: scale(1.08);
-    }
+    @apply cursor-pointer bg-light-white-200 dark:bg-light-white-200 p-4 rounded-full;
   }
 }
 </style>
