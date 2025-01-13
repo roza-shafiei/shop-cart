@@ -1,19 +1,32 @@
 <script>
 import TheHeader from '@/components/layouts/TheHeader.vue'
-import ImageCarousel from '@/components/global/ImageCarousel.vue'
 import axios from '@/plugins/axios.js'
 import TheLoading from '@/components/global/TheLoading.vue'
 import ThePlaceholder from '@/components/global/ThePlaceholder.vue'
 import IconTextBox from '@/components/global/IconTextBox.vue'
 import SlideGroup from '@/components/global/SlideGroup.vue'
+import ImageCarousel from '@/components/global/ImageCarousel.vue'
+import CatCard from '@/components/global/CatCard.vue'
+import ProductList from '@/components/pages/home/ProductList.vue'
+import TheFooter from '@/components/layouts/TheFooter.vue'
 
 export default {
-  components: { SlideGroup, IconTextBox, ThePlaceholder, TheLoading, ImageCarousel, TheHeader },
+  components: {
+    ImageCarousel,
+    TheFooter,
+    CatCard,
+    SlideGroup,
+    IconTextBox,
+    ThePlaceholder,
+    TheLoading,
+    TheHeader,
+    ProductList,
+  },
   data() {
     return {
       loading: false,
-      imgList: [],
       loadingFeature: false,
+      imgList: [],
       featuredList: [],
     }
   },
@@ -66,6 +79,13 @@ export default {
         },
       ]
     },
+    catList() {
+      return [
+        { title: 'Wing Chair', img: '/images/home/Image.png', count: 35 },
+        { title: 'Wooden Chair', img: '/images/home/Image1.png', count: 157 },
+        { title: 'Desk Chair', img: '/images/home/Image2.png', count: 154 },
+      ]
+    },
   },
   mounted() {
     this.getCarouselContent()
@@ -112,7 +132,7 @@ export default {
       <ImageCarousel v-else :slides="imgList" />
     </div>
     <div
-      class="feature-container grid md:grid-cols-2 lg:grid-cols-4 layout p-10 rounded-xl justify-center gap-5 md:gap-3 xl:gap-5 bg-light-white-100"
+      class="feature-container layout grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-3 xl:gap-5 bg-light-white-100"
     >
       <IconTextBox v-for="(item, index) in featureList" :key="index" :item="item" />
     </div>
@@ -121,16 +141,37 @@ export default {
     >
       <img v-for="(item, i) in sponsorList" :key="i" :alt="item.alt" :src="item.url" />
     </div>
-    <SlideGroup :list="featuredList" />
+    <section class="featured-products !mt-16 max-content">
+      <h2 class="main-title text-light-secondary">Featured Products</h2>
+      <SlideGroup :list="featuredList" />
+    </section>
+    <section class="top-categories !mt-24 max-content">
+      <h2 class="main-title text-light-secondary">Top Categories</h2>
+      <div class="cat-container grid grid-cols-1 md:grid-cols-3 gap-3">
+        <CatCard v-for="(item, idx) in catList" :key="idx" :item="item" />
+      </div>
+    </section>
+    <ProductList class="product-list !mt-24 max-content" />
+    <TheFooter class="mt-20" />
   </div>
 </template>
 <style lang="scss" scoped>
 .feature-container {
+  justify-content: center;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
   box-shadow: 10px 0 30px rgba(22, 25, 50, 0.2);
 }
 
 .layout {
   max-width: 80%;
   margin: 1.5rem auto 0;
+}
+
+.main-title {
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 </style>
