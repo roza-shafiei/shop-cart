@@ -7,23 +7,43 @@ export default {
       required: true,
     },
   },
+  computed: {
+    productPrice() {
+      return '$' + this.item.price
+    },
+  },
 }
 </script>
 
 <template>
-  <RouterLink :to="item.url" class="product-card w-[18rem] rounded-lg">
+  <div class="product-card w-full max-w-[18rem] rounded-lg">
     <div
       class="img-container relative h-[18rem] rounded-lg bg-center bg-contain bg-origin-border bg-gradient-to-bl from-light-white-300 to-[#029FAE59]"
     >
-      <img :src="item.thumbnail" class="w-full h-auto absolute object-contain" />
+      <img
+        :alt="item.title"
+        :src="item.thumbnail"
+        class="w-full h-auto absolute object-contain rounded-lg"
+      />
     </div>
-    <div class="card-content">
-      <div>
+    <div class="card-content mt-2 flex items-center justify-between">
+      <div class="product-info">
         <p>{{ item.title }}</p>
-        <span>{{ item.price }}</span>
+        <span class="font-semibold text-lg">{{ productPrice }}</span>
+      </div>
+      <div
+        aria-label="Shopping cart"
+        class="card-btn w-11 h-11 rounded-lg bg-light-white-200 hover:bg-light-primary flex items-center justify-center cursor-pointer"
+        @click="addToCart"
+      >
+        <img alt="shopping cart" src="/images/icons/buy.png" />
       </div>
     </div>
-  </RouterLink>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card-btn {
+  transition: all 0.3s ease-in-out;
+}
+</style>
