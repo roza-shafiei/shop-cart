@@ -1,6 +1,14 @@
 <script>
+import CartModal from '@/components/global/CartModal.vue'
+
 export default {
   name: 'ProductCard',
+  data() {
+    return {
+      showCartDialog: false,
+    }
+  },
+  components: { CartModal },
   props: {
     item: {
       type: Object,
@@ -10,6 +18,12 @@ export default {
   computed: {
     productPrice() {
       return '$' + this.item.price
+    },
+  },
+  methods: {
+    addToCart() {
+      this.$store.commit('cart/ADD_TO_CART', this.item)
+      this.showCartDialog = true
     },
   },
 }
@@ -39,6 +53,7 @@ export default {
         <img alt="shopping cart" src="/images/icons/buy.png" />
       </div>
     </div>
+    <CartModal v-model="showCartDialog" />
   </div>
 </template>
 
