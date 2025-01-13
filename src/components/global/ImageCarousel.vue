@@ -46,7 +46,7 @@ export default {
 
         <!-- Image Section -->
         <div class="image-section relative w-full md:w-2/3 lg:w-1/2 h-full">
-          <v-img :alt="slide.title" :src="slide.images[0]" class="product-image">
+          <v-img :alt="slide.title" :src="slide.thumbnail" class="product-image">
             <template v-slot:placeholder>
               <div class="flex items-center justify-center h-full">
                 <v-progress-circular color="grey-lighten-6" indeterminate></v-progress-circular>
