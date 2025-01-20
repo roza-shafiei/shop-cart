@@ -30,28 +30,28 @@ export default {
 
     <!-- Navigation and Search -->
     <div class="middle-header py-5 bg-light-content dark:bg-dark-content">
-      <div class="max-content grid grid-cols-3 items-center">
+      <div class="max-content grid grid-cols-2 items-center">
         <!-- Logo Section -->
         <div>
           <Logo text="Comforty" />
         </div>
 
         <!-- Search Section -->
-        <form aria-label="Site search" class="flex items-center" role="search">
-          <v-text-field
-            aria-label="Search"
-            density="compact"
-            hide-details
-            placeholder="Search here..."
-            type="text"
-          >
-            <template v-slot:append>
-              <button aria-label="Search" type="submit">
-                <img alt="Search icon" class="h-6 w-6" src="/images/icons/search.png" />
-              </button>
-            </template>
-          </v-text-field>
-        </form>
+        <!--        <form aria-label="Site search" class="flex items-center" role="search">-->
+        <!--          <v-text-field-->
+        <!--            aria-label="Search"-->
+        <!--            density="compact"-->
+        <!--            hide-details-->
+        <!--            placeholder="Search here..."-->
+        <!--            type="text"-->
+        <!--          >-->
+        <!--            <template v-slot:append>-->
+        <!--              <button aria-label="Search" type="submit">-->
+        <!--                <img alt="Search icon" class="h-6 w-6" src="/images/icons/search.png" />-->
+        <!--              </button>-->
+        <!--            </template>-->
+        <!--          </v-text-field>-->
+        <!--        </form>-->
 
         <!-- Cart Section -->
         <div class="justify-self-end flex items-center gap-3">
