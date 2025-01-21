@@ -2,7 +2,9 @@
 
 ![Homepage Screenshot](./public/images/homepage.png)
 
-This is a simple Vue.js shop designed to demonstrate my ability to work with Vuex for state management. The project
+This project is a simple shop using the **Options API** style of writing Vue.js code to demonstrate my ability to work
+with Vuex
+for state management. The project
 includes features showcasing the integration of Vuex with Vue Router, Tailwind CSS, Vuetify, and Axios.
 
 ## Features
@@ -11,6 +13,8 @@ includes features showcasing the integration of Vuex with Vue Router, Tailwind C
 - **Routing**: Navigation handled with Vue Router.
 - **Styling**: Tailwind CSS for utility-first styling and Vuetify for UI components.
 - **API Integration**: Axios for making HTTP requests to external APIs.
+- **Options API**: The project is written using Vue's **Options API**
+- **DummyJSON API**: Fetches data such as products from [DummyJSON](https://dummyjson.com/).
 
 ## Tech Stack
 
