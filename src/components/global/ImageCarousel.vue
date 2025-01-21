@@ -7,6 +7,11 @@ export default {
       default: () => [],
     },
   },
+  methods: {
+    goToProductList() {
+      this.$router.push({ name: 'home', hash: '#products' })
+    },
+  },
 }
 </script>
 
@@ -41,7 +46,7 @@ export default {
         >
           <p class="text-sm uppercase">Welcome to Comforty</p>
           <h2 class="font-bold text-[26px] lg:text-5xl xl:text-6xl">{{ slide.title }}</h2>
-          <v-btn class="mt-4">Shop Now</v-btn>
+          <v-btn class="mt-4" @click="goToProductList">Shop Now</v-btn>
         </div>
 
         <!-- Image Section -->
@@ -75,15 +80,26 @@ export default {
 }
 
 .nav-button {
-  @apply cursor-pointer bg-light-white-100 dark:bg-light-white-100 p-4 rounded-full;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 100%;
   transition: transform 0.2s ease;
 
   &:hover {
     transform: scale(1.08);
   }
+
+  @apply bg-light-white-100 dark:bg-light-white-100;
 }
 
 .background-circle {
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(-20vw);
+  z-index: 0;
+  position: absolute;
+  border-radius: 100%;
+  background: $color-light-white-300;
   @screen sm {
     width: min(90vw, 37rem);
     height: min(90vw, 37rem);
@@ -95,26 +111,11 @@ export default {
     left: unset;
     transform: unset;
   }
-  left: 50%;
-  transform: translateX(-50%);
-  top: calc(-20vw);
-  z-index: 0;
-  position: absolute;
-  border-radius: 100%;
-  background: $color-light-white-300;
 }
 
 .discount-badge {
   height: 4rem;
   width: 4rem;
-  @screen sm {
-    height: 5.5rem;
-    width: 5.5rem;
-  }
-  @screen lg {
-    height: 7rem;
-    width: 7rem;
-  }
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,6 +126,14 @@ export default {
   z-index: 12;
   background: $color-light-white-100;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  @screen sm {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+  @screen lg {
+    height: 7rem;
+    width: 7rem;
+  }
 }
 
 .v-img {
@@ -142,6 +151,7 @@ export default {
 }
 </style>
 <style lang="scss">
+//Style vuetify default styles with its classes
 .v-carousel__controls {
   margin-bottom: 1rem !important;
   height: 30px;

@@ -151,7 +151,7 @@ export default {
         <CatCard v-for="(item, idx) in catList" :key="idx" :item="item" />
       </div>
     </section>
-    <ProductList class="product-list !mt-24 max-content" />
+    <ProductList id="products" class="product-list !mt-24 max-content" />
     <TheFooter class="mt-20" />
   </div>
 </template>
