@@ -25,16 +25,13 @@ export default {
   },
   mutations: {
     ADD_TO_CART(state, payload) {
-      const item = { ...payload, quantity: 1 }
-      const filterItem = state.cartItems.filter((item) => {
+      const selectedIndex = state.cartItems.findIndex((item) => {
         return item.id === payload.id
       })
-      if (filterItem.length > 0) {
-        const selectedIndex = state.cartItems.findIndex((item) => {
-          return item.id === payload.id
-        })
+      if (selectedIndex >= 0) {
         state.cartItems[selectedIndex].quantity++
       } else {
+        const item = { ...payload, quantity: 1 }
         state.cartItems.push(item)
       }
     },

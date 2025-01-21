@@ -21,7 +21,7 @@ export default {
           <img alt="Tick icon indicating confirmation" src="/images/icons/check.png" />
           <span>Free shipping on all orders over $50</span>
         </div>
-        <RouterLink class="flex items-center gap-2" to="/">
+        <RouterLink class="flex items-center gap-2 cursor-pointer" to="/faq">
           <img alt="Alert icon" src="/images/icons/alert-circle.svg" />
           <p>Need Help</p>
         </RouterLink>
@@ -32,28 +32,9 @@ export default {
     <div class="middle-header py-5 bg-light-content dark:bg-dark-content">
       <div class="max-content grid grid-cols-2 items-center">
         <!-- Logo Section -->
-        <div>
-          <Logo text="Comforty" />
-        </div>
-
-        <!-- Search Section -->
-        <!--        <form aria-label="Site search" class="flex items-center" role="search">-->
-        <!--          <v-text-field-->
-        <!--            aria-label="Search"-->
-        <!--            density="compact"-->
-        <!--            hide-details-->
-        <!--            placeholder="Search here..."-->
-        <!--            type="text"-->
-        <!--          >-->
-        <!--            <template v-slot:append>-->
-        <!--              <button aria-label="Search" type="submit">-->
-        <!--                <img alt="Search icon" class="h-6 w-6" src="/images/icons/search.png" />-->
-        <!--              </button>-->
-        <!--            </template>-->
-        <!--          </v-text-field>-->
-        <!--        </form>-->
-
+        <Logo text="Comforty" />
         <!-- Cart Section -->
+
         <div class="justify-self-end flex items-center gap-3">
           <div
             aria-labelledby="cart"
