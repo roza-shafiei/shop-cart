@@ -13,7 +13,7 @@ export default {
   computed: {
     ...mapGetters('cart', ['allCartItems', 'sumCart']),
     sumCartItems() {
-      return `Total: ${this.sumCart} $`
+      return ` ${this.sumCart} $`
     },
     showModel: {
       get() {
@@ -44,28 +44,35 @@ export default {
         </header>
         <hr />
         <div class="mt-4 flex flex-col items-center">
-          <div v-for="(item, index) in allCartItems" :key="index" class="w-full">
-            <div class="w-full flex items-center justify-between gap-4">
-              <img
-                :alt="item.title"
-                :src="item.thumbnail"
-                class="h-20 w-20 object-cover rounded-lg"
-              />
-              <div>
-                <p class="font-medium text-lg">{{ item.title }}</p>
-                <p class="text-xs text-light-black-200">{{ item.price }}</p>
+          <template v-if="allCartItems.length">
+            <div v-for="(item, index) in allCartItems" :key="index" class="w-full">
+              <div class="w-full flex items-center justify-between gap-4">
+                <img
+                  :alt="item.title"
+                  :src="item.thumbnail"
+                  class="h-20 w-20 object-cover rounded-lg"
+                />
+                <div>
+                  <p class="font-medium text-lg">{{ item.title }}</p>
+                  <p class="text-xs text-light-black-200">{{ item.price }}</p>
+                </div>
+                <p>{{ item.quantity }}</p>
+                <span
+                  aria-label="Remove item from cart"
+                  class="p-4 cursor-pointer"
+                  @click="removeItem(item)"
+                  >X</span
+                >
               </div>
-              <p>{{ item.quantity }}</p>
-              <span
-                aria-label="Remove item from cart"
-                class="p-4 cursor-pointer"
-                @click="removeItem(item)"
-                >X</span
-              >
+              <hr />
             </div>
-            <hr />
-          </div>
-          <p class="mt-4">{{ sumCartItems }}</p>
+          </template>
+          <template v-else>
+            <p>Your cart is empty!</p>
+          </template>
+          <p class="mt-4 flex items-center gap-2">
+            <span class="font-semibold text-xl">Total: </span><span>{{ sumCartItems }}</span>
+          </p>
         </div>
       </div>
     </v-dialog>

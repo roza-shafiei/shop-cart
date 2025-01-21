@@ -74,7 +74,7 @@ export default {
           v-for="(cat, index) in catList"
           :key="index"
           :class="selectedCat === index ? 'text-light-black-900 active' : 'text-light-black-100'"
-          class="uppercase font-medium inline-block relative"
+          class="uppercase cursor-pointer font-medium inline-block relative"
           @click="onCategoryClick(index)"
           >{{ cat }}</span
         >

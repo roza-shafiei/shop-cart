@@ -22,6 +22,17 @@ export default {
     allCartItems(state) {
       return state.cartItems
     },
+    countAllCartItems(state) {
+      if (state.cartItems.length > 0) {
+        const initialValue = 0
+
+        return state.cartItems.reduce((acc, item) => {
+          return acc + item.quantity
+        }, initialValue)
+      } else {
+        return 0
+      }
+    },
   },
   mutations: {
     ADD_TO_CART(state, payload) {
