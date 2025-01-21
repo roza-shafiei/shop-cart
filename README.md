@@ -1,35 +1,23 @@
-# Shop
+# Vue.js Application with Vuex
 
-This template should help get you started developing with Vue 3 in Vite.
+![Homepage Screenshot](./public/images/homepage.png)
 
-## Recommended IDE Setup
+This is a simple Vue.js shop designed to demonstrate my ability to work with Vuex for state management. The project
+includes features showcasing the integration of Vuex with Vue Router, Tailwind CSS, Vuetify, and Axios.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Features
 
-## Customize configuration
+- **State Management**: Using Vuex for centralized state management.
+- **Routing**: Navigation handled with Vue Router.
+- **Styling**: Tailwind CSS for utility-first styling and Vuetify for UI components.
+- **API Integration**: Axios for making HTTP requests to external APIs.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Tech Stack
 
-## Project Setup
+- **Vue.js**: A progressive JavaScript framework for building user interfaces.
+- **Vuex**: For state management.
+- **Vue Router**: For handling navigation between views.
+- **Tailwind CSS**: For modern and responsive styling.
+- **Vuetify**: For pre-built, customizable UI components.
+- **Axios**: For HTTP requests and API communication.
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
